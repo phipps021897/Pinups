@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Pinups — Players</title>
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="assets/img/favicon-192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png" />
+<link rel="shortcut icon" href="assets/img/favicon.ico" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-row">
+    <img src="assets/img/logo.png" alt="The Rock Pub & Kitchen" class="site-logo" />
+    <p class="brand">Pinups<span class="dot">.</span></p>
+  </div>
+  <p class="subtitle">Team Players</p>
+</header>
+
+<main>
+  <div class="card">
+    <h2 class="section-title">Squad 2026&ndash;27</h2>
+    <div class="players-grid" id="players-grid"></div>
+  </div>
+</main>
+
+<nav class="tab-nav">
+  <a href="index.html"><span class="icon">&#128197;</span>Fixtures</a>
+  <a href="results.html"><span class="icon">&#127942;</span>Results</a>
+  <a href="players.html" class="active"><span class="icon">&#128101;</span>Players</a>
+  <a href="rules.html"><span class="icon">&#128220;</span>Rules</a>
+</nav>
+
+<script>
+  const PLAYERS = [
+    { name: "Carl" },
+    { name: "Tyson" },
+    { name: "Jack" },
+    { name: "Apples", title: "Captain" },
+    { name: "Diego" },
+    { name: "Mike" },
+    { name: "Sinney", title: "Secretary" },
+    { name: "Taylor" },
+    { name: "Paul" },
+    { name: "Bigs" },
+    { name: "Benji" },
+    { name: "Merv" },
+  ];
+  const grid = document.getElementById("players-grid");
+  PLAYERS.forEach(({ name, title }) => {
+    const initials = name.slice(0, 2).toUpperCase();
+    const card = document.createElement("div");
+    card.className = "player-card";
+    card.innerHTML = `
+      <div class="player-avatar">${initials}</div>
+      <p class="player-name">${name}</p>
+      ${title ? `<p class="player-title">${title}</p>` : ""}
+      <p class="player-role">Photo coming soon</p>
+    `;
+    grid.appendChild(card);
+  });
+</script>
+
+</body>
+</html>

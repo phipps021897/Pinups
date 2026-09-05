@@ -1,0 +1,493 @@
+:root {
+  --pinups-red: #b5182b;
+  --pinups-red-dark: #7d0f1e;
+  --pinups-cream: #fdf6ea;
+  --pinups-black: #1c1414;
+  --pinups-gold: #d9a441;
+  --pinups-blue: #2c6e9e;
+  --pinups-purple: #7a4b8c;
+  --radius: 14px;
+  --shadow: 0 2px 10px rgba(28, 20, 20, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--pinups-cream);
+  color: var(--pinups-black);
+  padding-bottom: 76px; /* space for bottom tab nav */
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: linear-gradient(135deg, var(--pinups-red), var(--pinups-red-dark));
+  color: #fff;
+  padding: 22px 18px 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.site-header .header-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.site-header .site-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--pinups-gold);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.site-header .brand {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.site-header .brand .dot {
+  color: var(--pinups-gold);
+}
+
+.site-header .subtitle {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  opacity: 0.92;
+  font-weight: 500;
+}
+
+/* ---------- Main content ---------- */
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+h2.section-title {
+  font-size: 1.15rem;
+  margin: 0 0 12px;
+  color: var(--pinups-red-dark);
+  border-left: 5px solid var(--pinups-gold);
+  padding-left: 10px;
+}
+
+/* ---------- Bottom tab nav ---------- */
+.tab-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+  z-index: 50;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.tab-nav a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  color: #7a6f6f;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 9px 4px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.tab-nav a .icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.tab-nav a.active {
+  color: var(--pinups-red);
+}
+
+/* ---------- Calendar ---------- */
+.cal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cal-nav button {
+  background: var(--pinups-red);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  min-width: 44px;
+}
+
+.cal-nav .cal-month-label {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--pinups-black);
+  text-align: center;
+}
+
+.cal-today-btn {
+  display: block;
+  margin: 0 auto 14px;
+  background: none;
+  border: 1.5px solid var(--pinups-red);
+  color: var(--pinups-red);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+  margin-bottom: 6px;
+}
+
+.cal-weekday {
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #9a8f8f;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.cal-day {
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  background: #f7f0e4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--pinups-black);
+  position: relative;
+}
+
+.cal-day.empty {
+  background: transparent;
+}
+
+.cal-day.today {
+  outline: 2px solid var(--pinups-red);
+  outline-offset: -2px;
+}
+
+.cal-day .dots {
+  display: flex;
+  gap: 2px;
+  margin-top: 3px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.home { background: var(--pinups-blue); }
+.dot.away { background: var(--pinups-gold); }
+.dot.cup { background: var(--pinups-purple); }
+.dot.pairs { background: #c04fa0; }
+.dot.bye { background: #b7b0b0; }
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  font-size: 0.78rem;
+  margin-top: 8px;
+  color: #5c5252;
+}
+
+.legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---------- Agenda list ---------- */
+.agenda-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid #f0e8d8;
+}
+
+.agenda-item:last-child {
+  border-bottom: none;
+}
+
+.agenda-date {
+  width: 52px;
+  flex-shrink: 0;
+  text-align: center;
+  background: var(--pinups-red);
+  color: #fff;
+  border-radius: 10px;
+  padding: 6px 0;
+}
+
+.agenda-date .d {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.agenda-date .m {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.agenda-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.agenda-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 0 0 2px;
+}
+
+.agenda-meta {
+  font-size: 0.8rem;
+  color: #7a6f6f;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  margin-left: 6px;
+}
+
+.badge.home { background: rgba(44, 110, 158, 0.15); color: var(--pinups-blue); }
+.badge.away { background: rgba(217, 164, 65, 0.2); color: #8a6a1f; }
+.badge.cup { background: rgba(122, 75, 140, 0.15); color: var(--pinups-purple); }
+.badge.pairs { background: rgba(192, 79, 160, 0.15); color: #a13b85; }
+.badge.bye { background: rgba(0,0,0,0.08); color: #6c6262; }
+
+.empty-month {
+  text-align: center;
+  color: #9a8f8f;
+  padding: 24px 8px;
+  font-size: 0.9rem;
+}
+
+/* ---------- Rules page ---------- */
+.merv-banner {
+  background: var(--pinups-black);
+  color: var(--pinups-gold);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.merv-banner .merv-quote {
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.25;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+.merv-banner img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--pinups-gold);
+  display: block;
+  margin: 0 auto;
+}
+
+.merv-banner .merv-caption {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #d8c9a0;
+  font-style: italic;
+}
+
+details.rule-section {
+  border-bottom: 1px solid #f0e8d8;
+  padding: 10px 2px;
+}
+
+details.rule-section:last-child {
+  border-bottom: none;
+}
+
+details.rule-section > summary {
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--pinups-red-dark);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 2px;
+}
+
+details.rule-section > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.rule-section > summary::after {
+  content: "+";
+  font-size: 1.3rem;
+  color: var(--pinups-red);
+  font-weight: 400;
+}
+
+details.rule-section[open] > summary::after {
+  content: "\2212";
+}
+
+.rule-list {
+  margin: 10px 0 4px;
+  padding-left: 18px;
+}
+
+.rule-list li {
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+/* ---------- Players page ---------- */
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.player-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 10px;
+  text-align: center;
+}
+
+.player-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, var(--pinups-red), var(--pinups-gold));
+}
+
+.player-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.player-title {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--pinups-red-dark);
+  background: rgba(181, 24, 43, 0.1);
+  border-radius: 10px;
+  padding: 2px 8px;
+  margin-top: 4px;
+}
+
+.player-role {
+  font-size: 0.72rem;
+  color: #9a8f8f;
+  margin-top: 2px;
+}
+
+@media (min-width: 480px) {
+  .players-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Results empty state ---------- */
+.empty-state {
+  text-align: center;
+  padding: 48px 16px;
+}
+
+.empty-state .emoji {
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+}
+
+.empty-state p {
+  color: #7a6f6f;
+  font-size: 0.95rem;
+}
+
+/* ---------- Wider screens: show top nav too ---------- */
+@media (min-width: 700px) {
+  main {
+    max-width: 800px;
+  }
+  .cal-day {
+    font-size: 0.85rem;
+  }
+}
