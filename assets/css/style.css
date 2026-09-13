@@ -234,6 +234,7 @@ h2.section-title {
 .dot.cup { background: var(--pinups-purple); }
 .dot.pairs { background: #c04fa0; }
 .dot.bye { background: #b7b0b0; }
+.dot.played { opacity: 0.35; }
 
 .legend {
   display: flex;
@@ -261,6 +262,18 @@ h2.section-title {
 
 .agenda-item:last-child {
   border-bottom: none;
+}
+
+.agenda-item.played {
+  opacity: 0.55;
+}
+
+.agenda-item.played .agenda-date {
+  background: #b7b0b0;
+}
+
+.agenda-item.played .agenda-title {
+  text-decoration: line-through;
 }
 
 .agenda-date {

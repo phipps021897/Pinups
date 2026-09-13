@@ -6,6 +6,9 @@
   const WEEKDAY_SHORT = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
   const events = PINUPS_EVENTS.slice().sort((a, b) => a.date.localeCompare(b.date));
+  const playedDates = new Set(
+    (typeof PINUPS_RESULTS !== "undefined" ? PINUPS_RESULTS : []).map((r) => r.date)
+  );
 
   const seasonStart = { y: 2026, m: 8 }; // September 2026 (0-indexed month)
   const seasonEnd = { y: 2027, m: 4 };   // May 2027
@@ -105,7 +108,7 @@
         dots.className = "dots";
         dayEvents.forEach((e) => {
           const dot = document.createElement("span");
-          dot.className = "dot " + dotClassesFor(e);
+          dot.className = "dot " + dotClassesFor(e) + (playedDates.has(e.date) ? " played" : "");
           dots.appendChild(dot);
         });
         el.appendChild(dots);
@@ -126,7 +129,7 @@
     monthEvents.forEach((e) => {
       const d = new Date(e.date + "T00:00:00");
       const item = document.createElement("div");
-      item.className = "agenda-item";
+      item.className = "agenda-item" + (playedDates.has(e.date) ? " played" : "");
       item.innerHTML = `
         <div class="agenda-date">
           <div class="d">${d.getDate()}</div>
