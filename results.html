@@ -20,15 +20,7 @@
   <p class="subtitle">Results</p>
 </header>
 
-<main>
-  <div class="card">
-    <div class="empty-state">
-      <div class="emoji">&#127881;</div>
-      <p><strong>No results yet.</strong></p>
-      <p>Check back once the season kicks off on Friday 11th September — results will be posted here after every match.</p>
-    </div>
-  </div>
-</main>
+<main id="results-main"></main>
 
 <nav class="tab-nav">
   <a href="index.html"><span class="icon">&#128197;</span>Fixtures</a>
@@ -36,6 +28,70 @@
   <a href="players.html"><span class="icon">&#128101;</span>Players</a>
   <a href="rules.html"><span class="icon">&#128220;</span>Rules</a>
 </nav>
+
+<script src="assets/js/results-data.js"></script>
+<script>
+  const MONTH_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const main = document.getElementById("results-main");
+
+  if (!PINUPS_RESULTS.length) {
+    main.innerHTML = `
+      <div class="card">
+        <div class="empty-state">
+          <div class="emoji">&#127881;</div>
+          <p><strong>No results yet.</strong></p>
+          <p>Check back once the season kicks off — results will be posted here after every match.</p>
+        </div>
+      </div>
+    `;
+  } else {
+    PINUPS_RESULTS.slice().reverse().forEach((m) => {
+      const d = new Date(m.date + "T00:00:00");
+      const dateStr = `${["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()]} ${d.getDate()} ${MONTH_SHORT[d.getMonth()]} ${d.getFullYear()}`;
+      const won = m.pinupsScore > m.opponentScore;
+      const drew = m.pinupsScore === m.opponentScore;
+      const diff = Math.abs(m.pinupsScore - m.opponentScore);
+      const resultLabel = won ? `WON +${diff}` : drew ? "DREW" : `LOST -${diff}`;
+      const resultClass = won ? "win" : drew ? "draw" : "loss";
+
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <div class="result-meta">${dateStr} &middot; ${m.venue} &middot; ${m.homeAway}</div>
+        <div class="result-score-row">
+          <div class="result-team">
+            <span class="result-team-name">Pinups</span>
+            <span class="result-team-score">${m.pinupsScore}</span>
+          </div>
+          <span class="result-badge ${resultClass}">${resultLabel}</span>
+          <div class="result-team">
+            <span class="result-team-score">${m.opponentScore}</span>
+            <span class="result-team-name">${m.opponent}</span>
+          </div>
+        </div>
+        <div class="result-table-wrap">
+          <table class="result-table">
+            <thead>
+              <tr><th>Player</th><th>Score</th><th>Bolters</th><th>Squares</th><th>Avg</th></tr>
+            </thead>
+            <tbody>
+              ${m.players.map((p) => `
+                <tr>
+                  <td>${p.name}</td>
+                  <td>${p.score}</td>
+                  <td>${p.bolters}</td>
+                  <td>${p.squares}</td>
+                  <td>${(p.score / 7).toFixed(1)}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
+      `;
+      main.appendChild(card);
+    });
+  }
+</script>
 
 </body>
 </html>

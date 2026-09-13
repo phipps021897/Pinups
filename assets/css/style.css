@@ -482,6 +482,98 @@ details.rule-section[open] > summary::after {
   font-size: 0.95rem;
 }
 
+/* ---------- Results match cards ---------- */
+.result-meta {
+  font-size: 0.75rem;
+  color: #9a8f8f;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.result-score-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.result-team {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex: 1;
+}
+
+.result-team:last-child {
+  flex-direction: row-reverse;
+}
+
+.result-team-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--pinups-black);
+}
+
+.result-team-score {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--pinups-red-dark);
+}
+
+.result-badge {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.result-badge.win { background: rgba(44, 158, 94, 0.15); color: #1e7a4c; }
+.result-badge.loss { background: rgba(181, 24, 43, 0.12); color: var(--pinups-red-dark); }
+.result-badge.draw { background: rgba(217, 164, 65, 0.2); color: #8a6a1f; }
+
+.result-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.result-table th,
+.result-table td {
+  padding: 8px 6px;
+  text-align: center;
+  border-bottom: 1px solid #f0e8d8;
+  white-space: nowrap;
+}
+
+.result-table th:first-child,
+.result-table td:first-child {
+  text-align: left;
+}
+
+.result-table th {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: #9a8f8f;
+  font-weight: 700;
+}
+
+.result-table td:first-child {
+  font-weight: 700;
+}
+
+.result-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
 /* ---------- Wider screens: show top nav too ---------- */
 @media (min-width: 700px) {
   main {
