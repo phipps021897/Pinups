@@ -29,13 +29,68 @@
   <a href="rules.html"><span class="icon">&#128220;</span>Rules</a>
 </nav>
 
+<script src="assets/js/players-data.js"></script>
 <script src="assets/js/results-data.js"></script>
 <script>
   const MONTH_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const main = document.getElementById("results-main");
 
+  const fmtAvg = (total, games) => {
+    if (!games) return "&ndash;";
+    const r = Math.round((total / games) * 10) / 10;
+    return Number.isInteger(r) ? String(r) : r.toFixed(1);
+  };
+
+  // Season Stats — always shown, seeded from the full squad so everyone
+  // appears even before they've played a match.
+  const seasonStats = {};
+  PINUPS_PLAYERS.forEach(({ name }) => {
+    seasonStats[name] = { games: 0, totalScore: 0, topScorer: 0, sotw: 0 };
+  });
+  const ensure = (name) => {
+    if (!seasonStats[name]) seasonStats[name] = { games: 0, totalScore: 0, topScorer: 0, sotw: 0 };
+    return seasonStats[name];
+  };
+  PINUPS_RESULTS.forEach((m) => {
+    const maxScore = Math.max(...m.players.map((p) => p.score));
+    m.players.forEach((p) => {
+      const stat = ensure(p.name);
+      stat.games += 1;
+      stat.totalScore += p.score;
+      if (p.score === maxScore) stat.topScorer += 1;
+    });
+    if (m.skittleOfTheWeek) ensure(m.skittleOfTheWeek).sotw += 1;
+  });
+
+  const statsCard = document.createElement("div");
+  statsCard.className = "card";
+  statsCard.innerHTML = `
+    <h2 class="section-title">Season Stats</h2>
+    <div class="result-table-wrap">
+      <table class="result-table">
+        <thead>
+          <tr><th>Player</th><th>Games</th><th>Average</th><th>Top Scorer</th><th>Skittle of the Week</th></tr>
+        </thead>
+        <tbody>
+          ${Object.entries(seasonStats)
+            .sort((a, b) => b[1].games - a[1].games || a[0].localeCompare(b[0]))
+            .map(([name, s]) => `
+              <tr>
+                <td>${name}</td>
+                <td>${s.games}</td>
+                <td>${fmtAvg(s.totalScore, s.games)}</td>
+                <td>${s.topScorer}</td>
+                <td>${s.sotw}</td>
+              </tr>
+            `).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+  main.appendChild(statsCard);
+
   if (!PINUPS_RESULTS.length) {
-    main.innerHTML = `
+    main.innerHTML += `
       <div class="card">
         <div class="empty-state">
           <div class="emoji">&#127881;</div>
@@ -45,47 +100,6 @@
       </div>
     `;
   } else {
-    const seasonStats = {};
-    const ensure = (name) => {
-      if (!seasonStats[name]) seasonStats[name] = { games: 0, topScorer: 0, sotw: 0 };
-      return seasonStats[name];
-    };
-    PINUPS_RESULTS.forEach((m) => {
-      const maxScore = Math.max(...m.players.map((p) => p.score));
-      m.players.forEach((p) => {
-        const stat = ensure(p.name);
-        stat.games += 1;
-        if (p.score === maxScore) stat.topScorer += 1;
-      });
-      if (m.skittleOfTheWeek) ensure(m.skittleOfTheWeek).sotw += 1;
-    });
-
-    const statsCard = document.createElement("div");
-    statsCard.className = "card";
-    statsCard.innerHTML = `
-      <h2 class="section-title">Season Stats</h2>
-      <div class="result-table-wrap">
-        <table class="result-table">
-          <thead>
-            <tr><th>Player</th><th>Games</th><th>Top Scorer</th><th>Skittle of the Week</th></tr>
-          </thead>
-          <tbody>
-            ${Object.entries(seasonStats)
-              .sort((a, b) => b[1].games - a[1].games || a[0].localeCompare(b[0]))
-              .map(([name, s]) => `
-                <tr>
-                  <td>${name}</td>
-                  <td>${s.games}</td>
-                  <td>${s.topScorer}</td>
-                  <td>${s.sotw}</td>
-                </tr>
-              `).join("")}
-          </tbody>
-        </table>
-      </div>
-    `;
-    main.appendChild(statsCard);
-
     PINUPS_RESULTS.slice().reverse().forEach((m) => {
       const d = new Date(m.date + "T00:00:00");
       const dateStr = `${["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()]} ${d.getDate()} ${MONTH_SHORT[d.getMonth()]} ${d.getFullYear()}`;

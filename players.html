@@ -34,23 +34,10 @@
   <a href="rules.html"><span class="icon">&#128220;</span>Rules</a>
 </nav>
 
+<script src="assets/js/players-data.js"></script>
 <script>
-  const PLAYERS = [
-    { name: "Carl" },
-    { name: "Tyson" },
-    { name: "Jack" },
-    { name: "Apples", title: "Captain" },
-    { name: "Diego" },
-    { name: "Mike" },
-    { name: "Shiney", title: "Secretary" },
-    { name: "Taylor" },
-    { name: "Paul" },
-    { name: "Bigs" },
-    { name: "Benji" },
-    { name: "Merv" },
-  ];
   const grid = document.getElementById("players-grid");
-  PLAYERS.forEach(({ name, title }) => {
+  PINUPS_PLAYERS.forEach(({ name, title }) => {
     const initials = name.slice(0, 2).toUpperCase();
     const card = document.createElement("div");
     card.className = "player-card";
