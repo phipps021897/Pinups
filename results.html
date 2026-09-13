@@ -45,10 +45,10 @@
   // appears even before they've played a match.
   const seasonStats = {};
   PINUPS_PLAYERS.forEach(({ name }) => {
-    seasonStats[name] = { games: 0, totalScore: 0, topScorer: 0, sotw: 0 };
+    seasonStats[name] = { games: 0, totalScore: 0, topScorer: 0, sotw: 0, bolters: 0, squares: 0 };
   });
   const ensure = (name) => {
-    if (!seasonStats[name]) seasonStats[name] = { games: 0, totalScore: 0, topScorer: 0, sotw: 0 };
+    if (!seasonStats[name]) seasonStats[name] = { games: 0, totalScore: 0, topScorer: 0, sotw: 0, bolters: 0, squares: 0 };
     return seasonStats[name];
   };
   PINUPS_RESULTS.forEach((m) => {
@@ -57,6 +57,8 @@
       const stat = ensure(p.name);
       stat.games += 1;
       stat.totalScore += p.score;
+      stat.bolters += p.bolters;
+      stat.squares += p.squares;
       if (p.score === maxScore) stat.topScorer += 1;
     });
     if (m.skittleOfTheWeek) ensure(m.skittleOfTheWeek).sotw += 1;
@@ -72,7 +74,7 @@
     <div class="result-table-wrap">
       <table class="result-table">
         <thead>
-          <tr><th>Player</th><th>Games</th><th>Average</th><th>Top Scorer</th><th>Skittle of the Week</th></tr>
+          <tr><th>Player</th><th>Games</th><th>Average</th><th>Bolters</th><th>Squares</th><th>Top Scorer</th><th>Skittle of the Week</th></tr>
         </thead>
         <tbody>
           ${Object.entries(seasonStats)
@@ -82,6 +84,8 @@
                 <td>${name}</td>
                 <td>${s.games}</td>
                 <td>${fmtAvg(s.totalScore, s.games)}</td>
+                <td>${s.bolters}</td>
+                <td>${s.squares}</td>
                 <td>${s.topScorer}</td>
                 <td>${s.sotw}</td>
               </tr>
@@ -130,7 +134,7 @@
         <div class="result-table-wrap">
           <table class="result-table">
             <thead>
-              <tr><th>Player</th><th>Score</th><th>Bolters</th><th>Squares</th><th>Avg</th></tr>
+              <tr><th>Player</th><th>Score</th><th>Bolters</th><th>Squares</th></tr>
             </thead>
             <tbody>
               ${m.players.map((p) => `
@@ -139,7 +143,6 @@
                   <td>${p.score}</td>
                   <td>${p.bolters}</td>
                   <td>${p.squares}</td>
-                  <td>${(p.score / 7).toFixed(1)}</td>
                 </tr>
               `).join("")}
             </tbody>
