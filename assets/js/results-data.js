@@ -20,3 +20,8 @@ const PINUPS_RESULTS = [
     ],
   },
 ];
+
+// Manual Skittle of the Week awards not tied to a specific recorded match result.
+const PINUPS_EXTRA_SOTW = {
+  Carl: 1,
+};

@@ -61,6 +61,9 @@
     });
     if (m.skittleOfTheWeek) ensure(m.skittleOfTheWeek).sotw += 1;
   });
+  Object.entries(typeof PINUPS_EXTRA_SOTW !== "undefined" ? PINUPS_EXTRA_SOTW : {}).forEach(([name, count]) => {
+    ensure(name).sotw += count;
+  });
 
   const statsCard = document.createElement("div");
   statsCard.className = "card";
