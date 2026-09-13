@@ -78,7 +78,7 @@
         </thead>
         <tbody>
           ${Object.entries(seasonStats)
-            .sort((a, b) => b[1].games - a[1].games || a[0].localeCompare(b[0]))
+            .sort((a, b) => a[0].localeCompare(b[0]))
             .map(([name, s]) => `
               <tr>
                 <td>${name}</td>
