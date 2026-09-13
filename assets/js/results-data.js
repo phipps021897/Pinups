@@ -7,6 +7,7 @@ const PINUPS_RESULTS = [
     venue: "The Rock",
     pinupsScore: 463,
     opponentScore: 401,
+    skittleOfTheWeek: "Carl",
     players: [
       { name: "Carl", score: 73, bolters: 1, squares: 2 },
       { name: "Paul", score: 60, bolters: 1, squares: 1 },
