@@ -78,7 +78,11 @@
         </thead>
         <tbody>
           ${Object.entries(seasonStats)
-            .sort((a, b) => a[0].localeCompare(b[0]))
+            .sort((a, b) => {
+              const avgA = a[1].games ? a[1].totalScore / a[1].games : -Infinity;
+              const avgB = b[1].games ? b[1].totalScore / b[1].games : -Infinity;
+              return avgB - avgA || a[0].localeCompare(b[0]);
+            })
             .map(([name, s]) => `
               <tr>
                 <td>${name}</td>
