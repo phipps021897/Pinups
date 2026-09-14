@@ -54,7 +54,7 @@
 
   function badgeLabel(e) {
     if (e.type === "league") return e.homeAway;
-    if (e.type === "cup") return "Cup";
+    if (e.type === "cup") return e.homeAway ? `Cup · ${e.homeAway}` : "Cup";
     if (e.type === "pairs") return "Pairs";
     if (e.type === "bye") return "Bye";
     return "";
