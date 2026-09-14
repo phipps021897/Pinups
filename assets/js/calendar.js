@@ -62,7 +62,7 @@
 
   function eventTitle(e) {
     if (e.type === "league") return `vs ${e.opponent}`;
-    if (e.type === "cup") return e.label + " (TBC)";
+    if (e.type === "cup") return e.opponent ? `${e.label} vs ${e.opponent}` : `${e.label} (TBC)`;
     if (e.type === "pairs") return e.label + " (TBC)";
     if (e.type === "bye") return "Bye Week — no fixture";
     return "";

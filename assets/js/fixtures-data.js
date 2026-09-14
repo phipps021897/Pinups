@@ -5,7 +5,7 @@ const PINUPS_EVENTS = [
   { type: "league", date: "2026-09-11", opponent: "Shipmates", homeAway: "Home", venue: "The Rock", night: "Friday" },
   { type: "league", date: "2026-09-18", opponent: "Hardy's Admirals", homeAway: "Away", venue: "Admiral Hardy", night: "Friday" },
   { type: "league", date: "2026-09-25", opponent: "Likely Lads", homeAway: "Home", venue: "The Rock", night: "Friday" },
-  { type: "cup", date: "2026-09-28", label: "Cup Game 1", venue: "TBC", night: "TBC" },
+  { type: "cup", date: "2026-10-02", label: "Cup Game 1", opponent: "Legionaires", homeAway: "Away", venue: "Portland Social Club", night: "Friday" },
   { type: "league", date: "2026-10-09", opponent: "Legionaires", homeAway: "Away", venue: "Portland Social Club", night: "Friday" },
   { type: "league", date: "2026-10-16", opponent: "All-Stars", homeAway: "Home", venue: "The Rock", night: "Friday" },
   { type: "league", date: "2026-10-21", opponent: "Pinball Wizards", homeAway: "Away", venue: "Chapelhay Tavern", night: "Wednesday" },
