@@ -101,11 +101,13 @@
   main.appendChild(statsCard);
 
   // Single-stat leaderboards — top 3 by bolters, squares, and top-scorer count.
+  // Ties for 3rd place are all included (joint placings), so the list can run longer than 3 rows.
   const leaderboard = (title, key) => {
-    const rows = Object.entries(seasonStats)
-      .filter(([, s]) => s.games > 0)
-      .sort((a, b) => b[1][key] - a[1][key] || a[0].localeCompare(b[0]))
-      .slice(0, 3);
+    const sorted = Object.entries(seasonStats)
+      .filter(([, s]) => s.games > 0 && s[key] > 0)
+      .sort((a, b) => b[1][key] - a[1][key] || a[0].localeCompare(b[0]));
+    const cutoff = sorted.length ? sorted[Math.min(2, sorted.length - 1)][1][key] : null;
+    const rows = sorted.filter(([, s]) => s[key] >= cutoff);
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
