@@ -29,11 +29,11 @@ const PINUPS_RESULTS = [
     players: [
       { name: "Shiney", score: 62, bolters: 3, squares: 2 },
       { name: "Tyson", score: 52, bolters: 2, squares: 0 },
-      { name: "Taylor", score: 52, bolters: 3, squares: 0 },
+      { name: "Taylor", score: 52, bolters: 4, squares: 0 },
       { name: "Jack", score: 57, bolters: 1, squares: 1 },
       { name: "Bigs", score: 59, bolters: 4, squares: 1 },
       { name: "Mike", score: 57, bolters: 2, squares: 0 },
-      { name: "Merv", score: 44, bolters: 5, squares: 0 },
+      { name: "Merv", score: 44, bolters: 6, squares: 0 },
       { name: "Apples", score: 55, bolters: 1, squares: 0 },
     ],
   },
