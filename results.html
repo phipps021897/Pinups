@@ -100,12 +100,12 @@
   `;
   main.appendChild(statsCard);
 
-  // Single-stat leaderboards — top 5 by bolters, squares, and top-scorer count.
+  // Single-stat leaderboards — top 3 by bolters, squares, and top-scorer count.
   const leaderboard = (title, key) => {
     const rows = Object.entries(seasonStats)
       .filter(([, s]) => s.games > 0)
       .sort((a, b) => b[1][key] - a[1][key] || a[0].localeCompare(b[0]))
-      .slice(0, 5);
+      .slice(0, 3);
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
