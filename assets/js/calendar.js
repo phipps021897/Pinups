@@ -10,6 +10,10 @@
     (typeof PINUPS_RESULTS !== "undefined" ? PINUPS_RESULTS : []).map((r) => r.date)
   );
 
+  function isGreyedOut(e) {
+    return playedDates.has(e.date) || !!e.notPlayed;
+  }
+
   const seasonStart = { y: 2026, m: 8 }; // September 2026 (0-indexed month)
   const seasonEnd = { y: 2027, m: 4 };   // May 2027
 
@@ -61,7 +65,7 @@
   }
 
   function eventTitle(e) {
-    if (e.type === "league") return `vs ${e.opponent}`;
+    if (e.type === "league") return `vs ${e.opponent}` + (e.notPlayed ? " (Not Played)" : "");
     if (e.type === "cup") return e.opponent ? `${e.label} vs ${e.opponent}` : `${e.label} (TBC)`;
     if (e.type === "pairs") return e.label + " (TBC)";
     if (e.type === "bye") return "Bye Week — no fixture";
@@ -108,7 +112,7 @@
         dots.className = "dots";
         dayEvents.forEach((e) => {
           const dot = document.createElement("span");
-          dot.className = "dot " + dotClassesFor(e) + (playedDates.has(e.date) ? " played" : "");
+          dot.className = "dot " + dotClassesFor(e) + (isGreyedOut(e) ? " played" : "");
           dots.appendChild(dot);
         });
         el.appendChild(dots);
@@ -129,7 +133,7 @@
     monthEvents.forEach((e) => {
       const d = new Date(e.date + "T00:00:00");
       const item = document.createElement("div");
-      item.className = "agenda-item" + (playedDates.has(e.date) ? " played" : "");
+      item.className = "agenda-item" + (isGreyedOut(e) ? " played" : "");
       item.innerHTML = `
         <div class="agenda-date">
           <div class="d">${d.getDate()}</div>
