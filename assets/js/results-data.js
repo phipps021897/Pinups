@@ -37,6 +37,24 @@ const PINUPS_RESULTS = [
       { name: "Apples", score: 55, bolters: 1, squares: 0 },
     ],
   },
+  {
+    date: "2026-10-02",
+    opponent: "Legionaires",
+    homeAway: "Away",
+    venue: "Portland Social Club",
+    pinupsScore: 400,
+    opponentScore: 408,
+    players: [
+      { name: "Carl", score: 50, bolters: 4, squares: 0 },
+      { name: "Paul", score: 48, bolters: 3, squares: 0 },
+      { name: "Shiney", score: 45, bolters: 4, squares: 0 },
+      { name: "Taylor", score: 57, bolters: 0, squares: 1 },
+      { name: "Jack", score: 53, bolters: 4, squares: 0 },
+      { name: "Diego", score: 45, bolters: 5, squares: 0 },
+      { name: "Mike", score: 54, bolters: 2, squares: 0 },
+      { name: "Apples", score: 49, bolters: 5, squares: 1 },
+    ],
+  },
 ];
 
 // Manual Skittle of the Week awards not tied to a specific recorded match result.
