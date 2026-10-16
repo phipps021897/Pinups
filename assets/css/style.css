@@ -587,6 +587,19 @@ details.rule-section[open] > summary::after {
   border-bottom: none;
 }
 
+/* ---------- League table ---------- */
+.league-table tr.pinups-row td {
+  background: rgba(181, 24, 43, 0.1);
+  font-weight: 700;
+  color: var(--pinups-red-dark);
+}
+
+.league-footnote {
+  margin: 10px 2px 0;
+  font-size: 0.75rem;
+  color: #9a8f8f;
+}
+
 /* ---------- Wider screens: show top nav too ---------- */
 @media (min-width: 700px) {
   main {

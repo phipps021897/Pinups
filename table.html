@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Pinups — League Table</title>
+<link rel="stylesheet" href="assets/css/style.css?v=1" />
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="assets/img/favicon-192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png" />
+<link rel="shortcut icon" href="assets/img/favicon.ico" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-row">
+    <img src="assets/img/logo.png" alt="The Rock Pub & Kitchen" class="site-logo" />
+    <p class="brand">Pinups<span class="dot">.</span></p>
+  </div>
+  <p class="subtitle">Division 2</p>
+</header>
+
+<main>
+  <div class="card">
+    <h2 class="section-title">League Table</h2>
+    <div class="result-table-wrap">
+      <table class="result-table league-table">
+        <thead>
+          <tr>
+            <th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th>
+            <th>PinF</th><th>PinA</th><th>PinD</th><th>Pts</th>
+          </tr>
+        </thead>
+        <tbody id="league-table-body"></tbody>
+      </table>
+    </div>
+    <p class="league-footnote">** Rule 27</p>
+  </div>
+</main>
+
+<nav class="tab-nav">
+  <a href="index.html"><span class="icon">&#128197;</span>Fixtures</a>
+  <a href="results.html"><span class="icon">&#127942;</span>Results</a>
+  <a href="table.html" class="active"><span class="icon">&#128202;</span>Table</a>
+  <a href="players.html"><span class="icon">&#128101;</span>Players</a>
+  <a href="rules.html"><span class="icon">&#128220;</span>Rules</a>
+</nav>
+
+<script src="assets/js/league-table-data.js?v=1"></script>
+<script>
+  const tbody = document.getElementById("league-table-body");
+  LEAGUE_TABLE.forEach((t) => {
+    const tr = document.createElement("tr");
+    if (t.team === "Pinups") tr.className = "pinups-row";
+    tr.innerHTML = `
+      <td>${t.team}${t.note ? "**" : ""}</td>
+      <td>${t.p}</td>
+      <td>${t.w}</td>
+      <td>${t.d}</td>
+      <td>${t.l}</td>
+      <td>${t.pinF}</td>
+      <td>${t.pinA}</td>
+      <td>${t.pinD}</td>
+      <td>${t.pts}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+</script>
+
+</body>
+</html>
