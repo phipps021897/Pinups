@@ -73,6 +73,24 @@ const PINUPS_RESULTS = [
       { name: "Apples", score: 56, bolters: 3, squares: 1 },
     ],
   },
+  {
+    date: "2026-10-16",
+    opponent: "All-Stars",
+    homeAway: "Home",
+    venue: "The Rock",
+    pinupsScore: 428,
+    opponentScore: 447,
+    players: [
+      { name: "Carl", score: 54, bolters: 1, squares: 0 },
+      { name: "Jack", score: 53, bolters: 3, squares: 0 },
+      { name: "Shiney", score: 57, bolters: 3, squares: 1 },
+      { name: "Bigs", score: 53, bolters: 3, squares: 0 },
+      { name: "Diego", score: 58, bolters: 0, squares: 0 },
+      { name: "Mike", score: 49, bolters: 4, squares: 0 },
+      { name: "Merv", score: 52, bolters: 4, squares: 0 },
+      { name: "Apples", score: 52, bolters: 2, squares: 0 },
+    ],
+  },
 ];
 
 // Manual Skittle of the Week awards not tied to a specific recorded match result.
