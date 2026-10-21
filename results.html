@@ -31,7 +31,8 @@
 </nav>
 
 <script src="assets/js/players-data.js?v=1"></script>
-<script src="assets/js/results-data.js?v=8"></script>
+<script src="assets/js/results-data.js?v=9"></script>
+<script src="assets/js/clubs-data.js?v=1"></script>
 <script>
   const MONTH_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const main = document.getElementById("results-main");
@@ -135,6 +136,25 @@
     leaderboard("Top Bolters", "bolters");
     leaderboard("Top Squares", "squares");
     leaderboard("Top Scorers", "topScorer");
+  }
+
+  // Clubs — manually curated recognitions (not derived from match data).
+  if (typeof PINUPS_CLUBS !== "undefined" && PINUPS_CLUBS.length) {
+    const clubsCard = document.createElement("div");
+    clubsCard.className = "card";
+    clubsCard.innerHTML = `
+      <h2 class="section-title">Clubs</h2>
+      ${PINUPS_CLUBS.map((c) => `
+        <div class="club">
+          <p class="club-name">${c.name}</p>
+          ${c.description ? `<p class="club-desc">${c.description}</p>` : ""}
+          <div class="club-members">
+            ${c.members.map((m) => `<span class="club-member">${m}</span>`).join("")}
+          </div>
+        </div>
+      `).join("")}
+    `;
+    main.appendChild(clubsCard);
   }
 
   if (!PINUPS_RESULTS.length) {

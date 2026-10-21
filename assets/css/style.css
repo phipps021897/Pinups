@@ -600,6 +600,45 @@ details.rule-section[open] > summary::after {
   color: #9a8f8f;
 }
 
+/* ---------- Clubs ---------- */
+.club {
+  padding: 10px 2px;
+  border-bottom: 1px solid #f0e8d8;
+}
+
+.club:last-child {
+  border-bottom: none;
+}
+
+.club-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 0 0 2px;
+  color: var(--pinups-red-dark);
+}
+
+.club-desc {
+  font-size: 0.78rem;
+  color: #9a8f8f;
+  margin: 0 0 8px;
+}
+
+.club-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.club-member {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 14px;
+  background: rgba(217, 164, 65, 0.18);
+  color: #8a6a1f;
+}
+
 /* ---------- Wider screens: show top nav too ---------- */
 @media (min-width: 700px) {
   main {

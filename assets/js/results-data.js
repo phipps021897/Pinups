@@ -91,6 +91,24 @@ const PINUPS_RESULTS = [
       { name: "Apples", score: 52, bolters: 2, squares: 0 },
     ],
   },
+  {
+    date: "2026-10-21",
+    opponent: "Pinball Wizards",
+    homeAway: "Away",
+    venue: "Chapelhay Tavern",
+    pinupsScore: 398,
+    opponentScore: 365,
+    players: [
+      { name: "Carl", score: 51, bolters: 2, squares: 0 },
+      { name: "Shiney", score: 49, bolters: 4, squares: 0 },
+      { name: "Jack", score: 39, bolters: 7, squares: 0 },
+      { name: "Taylor", score: 46, bolters: 2, squares: 0 },
+      { name: "Bigs", score: 62, bolters: 1, squares: 2 },
+      { name: "Diego", score: 58, bolters: 3, squares: 1 },
+      { name: "Merv", score: 55, bolters: 4, squares: 1 },
+      { name: "Apples", score: 37, bolters: 7, squares: 0 },
+    ],
+  },
 ];
 
 // Manual Skittle of the Week awards not tied to a specific recorded match result.
