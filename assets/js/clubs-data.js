@@ -2,7 +2,7 @@
 const PINUPS_CLUBS = [
   {
     name: "Top 30's Club",
-    description: "Big single-hand scores.",
+    description: "Shame club — scored a match total in the 30s.",
     members: ["Jack", "Apples"],
   },
   {
