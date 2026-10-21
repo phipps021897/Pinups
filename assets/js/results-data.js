@@ -101,7 +101,7 @@ const PINUPS_RESULTS = [
     players: [
       { name: "Carl", score: 51, bolters: 2, squares: 0 },
       { name: "Shiney", score: 49, bolters: 4, squares: 0 },
-      { name: "Jack", score: 39, bolters: 7, squares: 0 },
+      { name: "Jack", score: 39, bolters: 9, squares: 0 },
       { name: "Taylor", score: 46, bolters: 2, squares: 0 },
       { name: "Bigs", score: 62, bolters: 1, squares: 2 },
       { name: "Diego", score: 58, bolters: 3, squares: 1 },
