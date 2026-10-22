@@ -448,6 +448,11 @@ details.rule-section[open] > summary::after {
   background: linear-gradient(135deg, var(--pinups-red), var(--pinups-gold));
 }
 
+.player-avatar-photo {
+  object-fit: cover;
+  display: block;
+}
+
 .player-name {
   font-weight: 700;
   font-size: 0.95rem;
