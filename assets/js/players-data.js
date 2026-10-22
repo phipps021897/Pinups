@@ -6,7 +6,7 @@ const PINUPS_PLAYERS = [
   { name: "Apples", title: "Captain" },
   { name: "Diego", photo: "assets/img/players/diego.jpg" },
   { name: "Mike", photo: "assets/img/players/mike.jpg" },
-  { name: "Shiney", title: "Secretary" },
+  { name: "Shiney", title: "Secretary", photo: "assets/img/players/shiney.jpg", photoPosition: "center top" },
   { name: "Taylor" },
   { name: "Paul" },
   { name: "Bigs" },
