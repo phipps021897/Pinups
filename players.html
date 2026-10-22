@@ -35,16 +35,16 @@
   <a href="rules.html"><span class="icon">&#128220;</span>Rules</a>
 </nav>
 
-<script src="assets/js/players-data.js?v=4"></script>
+<script src="assets/js/players-data.js?v=5"></script>
 <script>
   const grid = document.getElementById("players-grid");
-  PINUPS_PLAYERS.forEach(({ name, title, photo }) => {
+  PINUPS_PLAYERS.forEach(({ name, title, photo, photoPosition }) => {
     const initials = name.slice(0, 2).toUpperCase();
     const card = document.createElement("div");
     card.className = "player-card";
     card.innerHTML = `
       ${photo
-        ? `<img class="player-avatar player-avatar-photo" src="${photo}" alt="${name}" />`
+        ? `<img class="player-avatar player-avatar-photo" src="${photo}" alt="${name}" style="object-position: ${photoPosition || "center"};" />`
         : `<div class="player-avatar">${initials}</div>`}
       <p class="player-name">${name}</p>
       ${title ? `<p class="player-title">${title}</p>` : ""}
