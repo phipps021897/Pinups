@@ -1,7 +1,7 @@
 // Pinups clubs — manually curated recognitions, not derived from match data.
 const PINUPS_CLUBS = [
   {
-    name: "Top 30's Club",
+    name: "30's Club",
     description: "Shame club — scored a match total in the 30s.",
     members: ["Jack", "Apples"],
   },
