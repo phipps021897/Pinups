@@ -9,7 +9,7 @@ const PINUPS_PLAYERS = [
   { name: "Shiney", title: "Secretary", photo: "assets/img/players/shiney.jpg", photoPosition: "center top" },
   { name: "Taylor" },
   { name: "Paul" },
-  { name: "Bigs" },
+  { name: "Bigs", photo: "assets/img/players/bigs.jpg", photoPosition: "30% 20%" },
   { name: "Benji" },
   { name: "Merv", photo: "assets/img/players/merv.jpg" },
 ];
