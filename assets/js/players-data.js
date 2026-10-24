@@ -1,6 +1,6 @@
 // Pinups squad roster — shared by players.html and results.html.
 const PINUPS_PLAYERS = [
-  { name: "Carl" },
+  { name: "Carl", photo: "assets/img/players/carl.jpg" },
   { name: "Tyson", photo: "assets/img/players/tyson.jpg", photoPosition: "center top" },
   { name: "Jack", photo: "assets/img/players/jack.jpg" },
   { name: "Apples", title: "Captain", photo: "assets/img/players/apples.jpg" },
