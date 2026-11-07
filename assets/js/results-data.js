@@ -109,6 +109,24 @@ const PINUPS_RESULTS = [
       { name: "Apples", score: 37, bolters: 7, squares: 0 },
     ],
   },
+  {
+    date: "2026-11-06",
+    opponent: "Bees",
+    homeAway: "Away",
+    venue: "Wellworthys Social Club",
+    pinupsScore: 401,
+    opponentScore: 437,
+    players: [
+      { name: "Carl", score: 65, bolters: 2, squares: 2 },
+      { name: "Paul", score: 43, bolters: 7, squares: 0 },
+      { name: "Tyson", score: 55, bolters: 3, squares: 0 },
+      { name: "Shiney", score: 51, bolters: 6, squares: 0 },
+      { name: "Bigs", score: 46, bolters: 6, squares: 0 },
+      { name: "Diego", score: 44, bolters: 3, squares: 0 },
+      { name: "Mike", score: 46, bolters: 2, squares: 0 },
+      { name: "Merv", score: 51, bolters: 1, squares: 1 },
+    ],
+  },
 ];
 
 // Manual Skittle of the Week awards not tied to a specific recorded match result.
