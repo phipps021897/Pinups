@@ -124,7 +124,7 @@ const PINUPS_RESULTS = [
       { name: "Bigs", score: 46, bolters: 6, squares: 0 },
       { name: "Diego", score: 44, bolters: 3, squares: 0 },
       { name: "Mike", score: 46, bolters: 2, squares: 0 },
-      { name: "Merv", score: 51, bolters: 1, squares: 1 },
+      { name: "Merv", score: 51, bolters: 2, squares: 1 },
     ],
   },
 ];
