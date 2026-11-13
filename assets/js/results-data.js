@@ -127,6 +127,24 @@ const PINUPS_RESULTS = [
       { name: "Merv", score: 51, bolters: 2, squares: 1 },
     ],
   },
+  {
+    date: "2026-11-13",
+    opponent: "Zulu Mechanics",
+    homeAway: "Home",
+    venue: "The Rock",
+    pinupsScore: 457,
+    opponentScore: 442,
+    players: [
+      { name: "Carl", score: 62, bolters: 2, squares: 1 },
+      { name: "Tyson", score: 60, bolters: 1, squares: 1 },
+      { name: "Shiney", score: 63, bolters: 0, squares: 1 },
+      { name: "Taylor", score: 55, bolters: 3, squares: 1 },
+      { name: "Jack", score: 56, bolters: 1, squares: 1 },
+      { name: "Bigs", score: 62, bolters: 5, squares: 1 },
+      { name: "Merv", score: 52, bolters: 3, squares: 0 },
+      { name: "Apples", score: 47, bolters: 3, squares: 0 },
+    ],
+  },
 ];
 
 // Manual Skittle of the Week awards not tied to a specific recorded match result.
