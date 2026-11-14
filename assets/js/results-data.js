@@ -132,7 +132,7 @@ const PINUPS_RESULTS = [
     opponent: "Zulu Mechanics",
     homeAway: "Home",
     venue: "The Rock",
-    pinupsScore: 452,
+    pinupsScore: 457,
     opponentScore: 442,
     players: [
       { name: "Carl", score: 62, bolters: 2, squares: 1 },
