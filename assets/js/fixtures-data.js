@@ -15,7 +15,7 @@ const PINUPS_EVENTS = [
   { type: "league", date: "2026-11-27", opponent: "Chapelhay Blues", homeAway: "Home", venue: "The Rock", night: "Friday" },
   { type: "league", date: "2026-12-03", opponent: "Hardy's Hitmen", homeAway: "Away", venue: "Admiral Hardy", night: "Thursday" },
   { type: "league", date: "2026-12-11", opponent: "Diamonds", homeAway: "Home", venue: "The Rock", night: "Friday" },
-  { type: "cup", date: "2026-12-14", label: "Cup Game 3", venue: "TBC", night: "TBC" },
+  { type: "cup", date: "2026-12-18", label: "Cup Game 3", opponent: "Red Barrels", homeAway: "Away", venue: "TBC", night: "Friday" },
   { type: "league", date: "2027-01-15", opponent: "Shipmates", homeAway: "Away", venue: "Wellworthys Social Club", night: "Friday" },
   { type: "league", date: "2027-01-22", opponent: "Hardy's Admirals", homeAway: "Home", venue: "The Rock", night: "Friday" },
   { type: "league", date: "2027-01-28", opponent: "Likely Lads", homeAway: "Away", venue: "Belvedere Inn", night: "Thursday" },
