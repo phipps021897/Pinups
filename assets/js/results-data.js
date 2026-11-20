@@ -145,6 +145,24 @@ const PINUPS_RESULTS = [
       { name: "Apples", score: 47, bolters: 3, squares: 0 },
     ],
   },
+  {
+    date: "2026-11-20",
+    opponent: "Spit Roast Eagles",
+    homeAway: "Away",
+    venue: "Belvedere Inn",
+    pinupsScore: 385,
+    opponentScore: 397,
+    players: [
+      { name: "Carl", score: 58, bolters: 1, squares: 0 },
+      { name: "Paul", score: 40, bolters: 5, squares: 0 },
+      { name: "Tyson", score: 43, bolters: 2, squares: 0 },
+      { name: "Shiney", score: 43, bolters: 5, squares: 0 },
+      { name: "Taylor", score: 51, bolters: 1, squares: 0 },
+      { name: "Jack", score: 43, bolters: 1, squares: 0 },
+      { name: "Bigs", score: 48, bolters: 4, squares: 0 },
+      { name: "Mike", score: 60, bolters: 2, squares: 1 },
+    ],
+  },
 ];
 
 // Manual Skittle of the Week awards not tied to a specific recorded match result.
