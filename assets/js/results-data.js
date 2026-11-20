@@ -155,7 +155,7 @@ const PINUPS_RESULTS = [
     players: [
       { name: "Carl", score: 58, bolters: 1, squares: 0 },
       { name: "Paul", score: 40, bolters: 6, squares: 0 },
-      { name: "Tyson", score: 43, bolters: 3, squares: 0 },
+      { name: "Tyson", score: 42, bolters: 3, squares: 0 },
       { name: "Shiney", score: 43, bolters: 6, squares: 0 },
       { name: "Taylor", score: 51, bolters: 2, squares: 0 },
       { name: "Jack", score: 43, bolters: 2, squares: 0 },
