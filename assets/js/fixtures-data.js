@@ -30,6 +30,6 @@ const PINUPS_EVENTS = [
   { type: "league", date: "2027-04-15", opponent: "Chapelhay Blues", homeAway: "Away", venue: "Chapelhay Tavern", night: "Thursday" },
   { type: "cup", date: "2027-04-19", label: "Cup Game 5", venue: "TBC", night: "TBC" },
   { type: "league", date: "2027-04-30", opponent: "Hardy's Hitmen", homeAway: "Home", venue: "The Rock", night: "Friday" },
-  { type: "league", date: "2027-05-06", opponent: "Diamonds", homeAway: "Away", venue: "Wellworthys Social Club", night: "Thursday" },
+  { type: "league", date: "2027-05-04", opponent: "Diamonds", homeAway: "Away", venue: "Admiral Hardy", night: "Tuesday" },
   { type: "bye", date: "2027-05-10", label: "Bye Week", night: "Monday" },
 ];
