@@ -163,6 +163,24 @@ const PINUPS_RESULTS = [
       { name: "Mike", score: 60, bolters: 3, squares: 1 },
     ],
   },
+  {
+    date: "2026-11-27",
+    opponent: "Chapelhay Blues",
+    homeAway: "Home",
+    venue: "The Rock",
+    pinupsScore: 461,
+    opponentScore: 441,
+    players: [
+      { name: "Carl", score: 61, bolters: 2, squares: 2 },
+      { name: "Taylor", score: 62, bolters: 2, squares: 1 },
+      { name: "Shiney", score: 54, bolters: 4, squares: 0 },
+      { name: "Jack", score: 56, bolters: 3, squares: 1 },
+      { name: "Bigs", score: 57, bolters: 3, squares: 0 },
+      { name: "Mike", score: 57, bolters: 2, squares: 1 },
+      { name: "Merv", score: 59, bolters: 3, squares: 1 },
+      { name: "Apples", score: 58, bolters: 0, squares: 1 },
+    ],
+  },
 ];
 
 // Manual Skittle of the Week awards not tied to a specific recorded match result.
